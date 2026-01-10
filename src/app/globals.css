@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* 1. BRAUZER STANDARTLARINI TOZALASH VA ASOSIY SOZLAMALAR */
+@layer base {
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: currentColor;
+  }
+
+  html,
+  body {
+    /* Gorizontal skrolni butunlay yopish */
+    max-width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    /* Rasmdagi kabi toza oq fon */
+    background-color: #ffffff;
+    color: #333333;
+  }
+}
+
+/* 2. ANIMATSIYALAR - Qizil gradiyentlar uchun */
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* 3. INTERAKTIV EFFEKTLAR - Yangi dizayndagi tugmalar uchun */
+@layer components {
+  /* Asosiy qizil tugma effekti */
+  .btn-hover {
+    @apply transition-all duration-300 active:scale-95 cursor-pointer hover:brightness-110 hover:shadow-lg hover:shadow-red-200;
+  }
+
+  /* Navigatsiya linklari uchun silliq harakat */
+  .nav-link {
+    @apply transition-all duration-200 hover:text-red-600 hover:translate-x-1 inline-block;
+  }
+
+  /* Rasmdagi oq fonli tugmalar uchun border hover */
+  .btn-outline-hover {
+    @apply transition-all duration-300 border-2 border-gray-200 hover:border-red-600 hover:text-red-600 active:scale-95;
+  }
+}
+
+/* 4. CHIROYLI SKROLBAR - Yangi qizil rangda (#E31E24) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff5f5; /* Juda och pushti fon */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e31e24; /* Asosiy yorqin qizil */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b22222; /* To'q qizil */
+}
+
+/* 5. 100% EGALLAYDIGAN LINE LAR (Container ichida bo'lsa ham) */
+/* Masalan: BQM ogohlantirish chiziqlari uchun */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+/* 6. RASMGA MOS QO'SHIMCHA STILLAR (Futura shrifti uchun) */
+h1,
+h2,
+h3 {
+  font-family: var(--font-futura), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Rasmdagi och pushti fonli yumshoq zonalar */
+.bg-soft-red {
+  background: linear-gradient(
+    180deg,
+    rgba(227, 30, 36, 0.05) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
