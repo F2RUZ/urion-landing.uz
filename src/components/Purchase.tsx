@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { Mars } from "lucide-react";
 
 export default function Purchase() {
   const cards = [
@@ -68,10 +69,10 @@ export default function Purchase() {
   ];
 
   return (
-    <section className="relative w-full py-6 bg-gradient-to-b from-white via-slate-50 to-blue-50/30 overflow-hidden">
+    <section className="relative w-full py-5 bg-gradient-to-b from-white via-slate-50 to-blue-50/30 overflow-hidden">
       <div className="max-w-[1100px] mx-auto px-4 relative z-10">
         {/* TEPA QISMDAGI 3 TA KARTA */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-28">
           {cards.map((card, idx) => (
             <motion.div
               key={idx}
@@ -79,58 +80,72 @@ export default function Purchase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.2 }}
-              className="bg-white/90 backdrop-blur-md rounded-[40px] p-10 shadow-[0_15px_40px_rgba(26,43,60,0.05)] border border-slate-100 hover:border-blue-200 hover:shadow-[0_30px_60px_rgba(26,43,60,0.1)] transition-all duration-500 group"
+              className="bg-white/90 backdrop-blur-md rounded-[45px] p-10 shadow-[0_15px_40px_rgba(26,43,60,0.05)] border border-slate-100 hover:border-[#4FC3F7]/30 hover:shadow-[0_30px_60px_rgba(26,43,60,0.1)] transition-all duration-500 group"
             >
               <div className="mb-8 transform group-hover:scale-110 group-hover:rotate-[10deg] transition-transform duration-500">
                 {card.icon}
               </div>
-              <h3 className="text-[#1A2B3C] font-black text-[13px] mb-4 tracking-[2px] uppercase">
+              <h3 className="text-[#1A2B3C] font-[1000] text-[14px] mb-4 tracking-[2px] uppercase">
                 {card.title}
               </h3>
-              <p className="text-[#1A2B3C]/70 text-[13px] leading-relaxed font-bold">
+              <p className="text-slate-500 text-[13px] leading-relaxed font-bold">
                 {card.desc}
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* LOGO QISMI: URi♂N */}
+        {/* LOGO QISMI: URi♂N (KATTAROQ VERSIYADA) */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="flex flex-col items-center text-center space-y-6 mb-16"
+          className="flex flex-col items-center text-center space-y-8 mb-20"
         >
-          <h2 className="flex items-center text-[50px] md:text-[85px] font-black italic tracking-tighter leading-none text-[#1A2B3C]">
-            URi
-            <span className="text-[#4FC3F7] text-[60px] md:text-[100px] not-italic translate-y-[-4px] md:translate-y-[-8px] mx-[-2px] transform rotate-[10deg]">
-              ♂
+          <div className="flex items-center select-none">
+            {/* UR qismi */}
+            <span className="text-5xl md:text-[95px] font-[1000] italic tracking-tighter text-[#1A2B3C] leading-none">
+              URI
             </span>
-            N
-          </h2>
-          <div className="h-[3px] w-24 bg-gradient-to-r from-transparent via-[#4FC3F7] to-transparent" />
-          <p className="text-[#1A2B3C]/50 font-black tracking-[6px] uppercase text-[10px] md:text-[12px]">
+
+            {/* i o'rnidagi Mars (♂) belgisi */}
+            <div className="flex items-center justify-center mx-[-2px] md:mx-[4px]">
+              <Mars
+                strokeWidth={4} // Kattaroq o'lchamda strokeWidth ham ko'paytirildi
+                className="w-12 h-12 md:w-[105px] md:h-[105px] text-[#4FC3F7] transform rotate-[10deg] translate-y-[-2px] md:translate-y-[-4px]"
+              />
+            </div>
+
+            {/* N harfi */}
+            <span className="text-5xl md:text-[95px] font-[1000] italic tracking-tighter text-[#1A2B3C] leading-none">
+              N
+            </span>
+          </div>
+
+          <div className="h-[4px] w-32 bg-gradient-to-r from-transparent via-[#4FC3F7] to-transparent rounded-full" />
+
+          <p className="text-[#1A2B3C]/40 font-black tracking-[8px] uppercase text-[10px] md:text-[14px] mt-4">
             ERKAKLAR SALOMATLIGI KOMPLEKSI
           </p>
         </motion.div>
 
-        {/* O'YNAB TURUVCHI KAPSULALAR (URION RANGLARIDA) */}
-        <div className="relative h-24 flex justify-center items-center gap-12">
+        {/* O'YNAB TURUVCHI KAPSULALAR */}
+        <div className="relative h-32 flex justify-center items-center gap-16">
           {[
             {
               color: "bg-[#1A2B3C]",
-              size: "w-10 h-5",
+              size: "w-12 h-6",
               delay: 0,
               rotate: "rotate-45",
             },
             {
               color: "bg-[#4FC3F7]",
-              size: "w-12 h-6",
+              size: "w-14 h-7",
               delay: 0.5,
               rotate: "-rotate-12",
             },
             {
-              color: "bg-slate-300",
-              size: "w-10 h-5",
+              color: "bg-slate-200",
+              size: "w-12 h-6",
               delay: 1,
               rotate: "rotate-[60deg]",
             },
@@ -138,25 +153,26 @@ export default function Purchase() {
             <motion.div
               key={i}
               animate={{
-                y: [0, -25, 0],
-                rotate: [0, 15, -15, 0],
+                y: [0, -35, 0],
+                rotate: [0, 20, -20, 0],
+                scale: [1, 1.1, 1],
               }}
               transition={{
-                duration: 5,
+                duration: 6,
                 repeat: Infinity,
                 delay: pill.delay,
                 ease: "easeInOut",
               }}
-              className={`${pill.size} ${pill.color} rounded-full shadow-lg border border-white/50 ${pill.rotate} opacity-80`}
+              className={`${pill.size} ${pill.color} rounded-full shadow-2xl border border-white/40 ${pill.rotate} opacity-90`}
             />
           ))}
         </div>
       </div>
 
       {/* Orqa fondagi dekorativ elementlar */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-30">
-        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-blue-50 rounded-full blur-[120px]" />
-        <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-slate-100 rounded-full blur-[120px]" />
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-40">
+        <div className="absolute -top-[15%] -left-[10%] w-[50%] h-[50%] bg-[#4FC3F7]/5 rounded-full blur-[150px]" />
+        <div className="absolute -bottom-[15%] -right-[10%] w-[50%] h-[50%] bg-[#1A2B3C]/5 rounded-full blur-[150px]" />
       </div>
     </section>
   );

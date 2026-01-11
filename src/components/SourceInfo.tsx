@@ -22,8 +22,8 @@ export default function SourceInfo() {
           <div className="flex flex-col items-center lg:items-start gap-6">
             {/* URi♂N LOGO */}
             <h2 className="flex items-center text-[36px] md:text-[42px] font-black italic tracking-tighter leading-none text-[#1A2B3C]">
-              URi
-              <span className="text-[#4FC3F7] text-[45px] md:text-[52px] not-italic translate-y-[-4px] mx-[-1px] transform rotate-[10deg]">
+              URI
+              <span className="text-[#4FC3F7] text-[45px] md:text-[52px] not-italic translate-y-[-5px] mx-[-1px] transform rotate-[10deg]">
                 ♂
               </span>
               N

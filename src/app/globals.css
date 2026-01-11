@@ -1,43 +1,23 @@
 @import "tailwindcss";
 
-/* 1. BRAUZER STANDARTLARINI TOZALASH VA ASOSIY SOZLAMALAR */
+/* 1. ASOSIY SOZLAMALAR */
 @layer base {
-  *,
-  ::after,
-  ::before {
-    box-sizing: border-box;
-    border-width: 0;
-    border-style: solid;
-    border-color: currentColor;
-  }
-
   html,
   body {
-    /* Gorizontal skrolni butunlay yopish */
     max-width: 100vw;
     overflow-x: hidden;
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-    padding: 0;
-    /* Rasmdagi kabi toza oq fon */
     background-color: #ffffff;
-    color: #333333;
+    color: #1A2B3C; /* Urion to'q ko'k matni */
   }
 }
 
-/* 2. ANIMATSIYALAR - Qizil gradiyentlar uchun */
+/* 2. URi♂N MOVIY ANIMATSIYALARI */
 @keyframes gradient-x {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .animate-gradient-x {
@@ -45,65 +25,64 @@
   background-size: 200% 200%;
 }
 
-/* 3. INTERAKTIV EFFEKTLAR - Yangi dizayndagi tugmalar uchun */
+/* 3. INTERAKTIV EFFEKTLAR (URi♂N USLUBIDA) */
 @layer components {
-  /* Asosiy qizil tugma effekti */
+  /* Asosiy ko'k tugma effekti */
   .btn-hover {
-    @apply transition-all duration-300 active:scale-95 cursor-pointer hover:brightness-110 hover:shadow-lg hover:shadow-red-200;
+    @apply transition-all duration-300 active:scale-95 cursor-pointer hover:brightness-110 hover:shadow-lg hover:shadow-blue-100;
   }
 
-  /* Navigatsiya linklari uchun silliq harakat */
+  /* Navigatsiya linklari */
   .nav-link {
-    @apply transition-all duration-200 hover:text-red-600 hover:translate-x-1 inline-block;
+    @apply transition-all duration-200 hover:text-[#4FC3F7] hover:translate-x-1 inline-block;
   }
 
-  /* Rasmdagi oq fonli tugmalar uchun border hover */
+  /* Oq tugmalar uchun moviy border */
   .btn-outline-hover {
-    @apply transition-all duration-300 border-2 border-gray-200 hover:border-red-600 hover:text-red-600 active:scale-95;
+    @apply transition-all duration-300 border-2 border-slate-100 hover:border-[#4FC3F7] hover:text-[#4FC3F7] active:scale-95;
   }
 }
 
-/* 4. CHIROYLI SKROLBAR - Yangi qizil rangda (#E31E24) */
+/* 4. !!! MUHIM: URi♂N PREMIUM SCROLLBAR (FAQAT SHU TURSIN) !!! */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px; /* Biroz kengroq, ko'rinishi oson bo'lishi uchun */
 }
 
 ::-webkit-scrollbar-track {
-  background: #fff5f5; /* Juda och pushti fon */
+  background: #f1f5f9; /* Slate-50 fon */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #e31e24; /* Asosiy yorqin qizil */
-  border-radius: 10px;
+  background-color: #4FC3F7 !important; /* URi♂N Moviy */
+  border-radius: 20px;
+  border: 3px solid #f1f5f9; /* Track bilan chegara */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b22222; /* To'q qizil */
+  background-color: #0EA5E9 !important; /* To'qroq moviy */
 }
 
-/* 5. 100% EGALLAYDIGAN LINE LAR (Container ichida bo'lsa ham) */
-/* Masalan: BQM ogohlantirish chiziqlari uchun */
+/* Firefox uchun */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #4FC3F7 #f1f5f9;
+}
+
+/* 5. FON VA DEKORATSIYA */
+.bg-soft-blue {
+  background: linear-gradient(
+    180deg,
+    rgba(79, 195, 247, 0.08) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
 .full-bleed {
   width: 100vw;
   margin-left: calc(50% - 50vw);
   position: relative;
-  left: 0;
-  right: 0;
 }
 
-/* 6. RASMGA MOS QO'SHIMCHA STILLAR (Futura shrifti uchun) */
-h1,
-h2,
-h3 {
-  font-family: var(--font-futura), sans-serif;
-  letter-spacing: -0.02em;
-}
-
-/* Rasmdagi och pushti fonli yumshoq zonalar */
-.bg-soft-red {
-  background: linear-gradient(
-    180deg,
-    rgba(227, 30, 36, 0.05) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+h1, h2, h3 {
+  letter-spacing: -0.03em;
 }

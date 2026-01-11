@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import OrderModal from "./OrderModal";
+import { Mars } from "lucide-react";
 
 export default function Intro() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -17,13 +18,27 @@ export default function Intro() {
           <div className="w-full md:w-[55%] flex flex-col items-start text-left">
             <div className="relative mb-4 md:mb-6">
               {/* URi♂N Sarlavhasi markazlashtirilgan belgi bilan */}
-              <h1 className="flex items-center text-[42px] md:text-[65px] font-black italic leading-none tracking-tighter text-[#1A2B3C] drop-shadow-sm">
-                URi
-                <span className="flex items-center justify-center text-[48px] md:text-[75px] text-[#4FC3F7] transform rotate-[10deg] translate-y-[-2px] md:translate-y-[-4px] mx-[-2px]">
-                  ♂
+              <div className="flex items-center h-full leading-none select-none">
+                {/* UR qismi */}
+                <span className="text-3xl md:text-[50px] font-[1000] italic tracking-tighter text-[#1A2B3C] leading-none">
+                  URI
                 </span>
-                N
-              </h1>
+
+                {/* i o'rnidagi Mars (♂) belgisi */}
+                <div className="flex items-center justify-center mx-[-2px] md:mx-[0px]">
+                  <Mars
+                    /* strokeWidth orqali font qalinligini boshqaramiz */
+                    strokeWidth={3}
+                    /* O'lchamni harflar bilan tenglashtiramiz */
+                    className="w-7 h-7 md:w-[48px] md:h-[48px] text-[#4FC3F7] transform rotate-[12deg] translate-y-[-2px] md:translate-y-[2px]"
+                  />
+                </div>
+
+                {/* N harfi */}
+                <span className="text-3xl md:text-[50px] font-[1000] italic tracking-tighter text-[#1A2B3C] leading-none">
+                  N
+                </span>
+              </div>
 
               <div className="mt-3 md:mt-4 space-y-1">
                 <h2 className="text-[26px] md:text-[42px] font-extrabold leading-[1.1] text-[#1A2B3C] tracking-tight">

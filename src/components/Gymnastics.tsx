@@ -1,24 +1,25 @@
 "use client";
 import Image from "next/image";
+import { Mars } from "lucide-react"; // Ikonkani chaqirib olamiz
 
 export default function Gymnastics() {
   const gymCards = [
     {
       title: "QUVVAT",
       subtitle: "ENERGIYA ZAPASI",
-      imgSrc: "/energy-card.png", // Erkak kishi aktiv harakatda
+      imgSrc: "/energy-card.png",
       color: "from-blue-50 to-blue-100",
     },
     {
       title: "CHIDAMLILIK",
       subtitle: "TESTOSTERON BALANSI",
-      imgSrc: "/power-card.png", // Mushaklar yoki quvvat ramzi
+      imgSrc: "/power-card.png",
       color: "from-slate-50 to-slate-100",
     },
     {
       title: "HIMOYA",
       subtitle: "11 FAOL KOMPONENT",
-      imgSrc: "/shield-card.png", // Mahsulot qutisi yoki qalqon ramzi
+      imgSrc: "/shield-card.png",
       color: "from-blue-100 to-blue-200",
     },
   ];
@@ -26,20 +27,27 @@ export default function Gymnastics() {
   return (
     <section id="gym" className="w-full py-6 bg-white">
       <div className="max-w-[1100px] mx-auto px-4">
-        {/* SARLAVHA */}
+        {/* SARLAVHA - YANGILANGAN UR♂N BILAN */}
         <div className="mb-12">
-          <h2 className="text-[32px] md:text-[42px] font-black italic mb-4 tracking-tighter leading-none">
-            <span className="text-[#1A2B3C] flex items-center gap-2">
-              URi
-              <span className="text-[#4FC3F7] not-italic translate-y-[-2px]">
-                ♂
-              </span>
-              N
-            </span>
-            <span className="text-[#1A2B3C] ml-0 md:ml-4 not-italic font-extrabold text-2xl md:text-3xl block md:inline uppercase">
+          <h2 className="flex flex-wrap items-center text-[32px] md:text-[42px] font-black italic mb-4 tracking-tighter leading-none">
+            {/* UR♂N LOGO QISMI */}
+            <div className="flex items-center select-none mr-2 md:mr-4">
+              <span className="text-[#1A2B3C] italic leading-none">URI</span>
+              <div className="flex items-center justify-center mx-[-1px] md:mx-[1px]">
+                <Mars
+                  strokeWidth={4} // Harflar qalinligiga moslash uchun
+                  className="w-8 h-8 md:w-[48px] md:h-[48px] text-[#4FC3F7] transform rotate-[10deg] translate-y-[-1px] md:translate-y-[-2px]"
+                />
+              </div>
+              <span className="text-[#1A2B3C] italic leading-none">N</span>
+            </div>
+
+            {/* QO'SHIMCHA MATN */}
+            <span className="text-[#1A2B3C] not-italic font-extrabold text-2xl md:text-3xl uppercase">
               BILAN YUKSAK NATIJALAR SARI
             </span>
           </h2>
+
           <p className="text-slate-500 text-sm md:text-base font-bold max-w-[600px] leading-tight uppercase tracking-tight opacity-80">
             Vitakompleks-11 erkaklar organizmini eng kerakli vitamin va
             minerallar bilan to'yintirib, har qanday vaziyatda o'zingizni
@@ -47,7 +55,7 @@ export default function Gymnastics() {
           </p>
         </div>
 
-        {/* KARTALAR GRIDI */}
+        {/* KARTALAR GRIDI (Stillariga teginilmadi) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {gymCards.map((card, idx) => (
             <div
