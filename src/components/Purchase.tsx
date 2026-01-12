@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import React from "react";
 import { Mars } from "lucide-react";
 
 export default function Purchase() {
@@ -69,20 +69,16 @@ export default function Purchase() {
   ];
 
   return (
-    <section className="relative w-full py-5 bg-gradient-to-b from-white via-slate-50 to-blue-50/30 overflow-hidden">
+    <section className="relative w-full py-16 bg-gradient-to-b from-white via-slate-50 to-blue-50/30 overflow-hidden">
       <div className="max-w-[1100px] mx-auto px-4 relative z-10">
-        {/* TEPA QISMDAGI 3 TA KARTA */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-28">
+        {/* AFZALLIKLAR KARTALARI */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
           {cards.map((card, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.2 }}
-              className="bg-white/90 backdrop-blur-md rounded-[45px] p-10 shadow-[0_15px_40px_rgba(26,43,60,0.05)] border border-slate-100 hover:border-[#4FC3F7]/30 hover:shadow-[0_30px_60px_rgba(26,43,60,0.1)] transition-all duration-500 group"
+              className="bg-white/90 backdrop-blur-md rounded-[45px] p-10 shadow-[0_15px_40px_rgba(26,43,60,0.05)] border border-slate-100 hover:border-[#4FC3F7]/30 transition-all duration-300 group"
             >
-              <div className="mb-8 transform group-hover:scale-110 group-hover:rotate-[10deg] transition-transform duration-500">
+              <div className="mb-8 group-hover:scale-110 group-hover:rotate-[10deg] transition-transform duration-300">
                 {card.icon}
               </div>
               <h3 className="text-[#1A2B3C] font-[1000] text-[14px] mb-4 tracking-[2px] uppercase">
@@ -91,31 +87,22 @@ export default function Purchase() {
               <p className="text-slate-500 text-[13px] leading-relaxed font-bold">
                 {card.desc}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
 
-        {/* LOGO QISMI: URi♂N (KATTAROQ VERSIYADA) */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          className="flex flex-col items-center text-center space-y-8 mb-20"
-        >
+        {/* LOGOTIP QISMI */}
+        <div className="flex flex-col items-center text-center space-y-8 mb-16">
           <div className="flex items-center select-none">
-            {/* UR qismi */}
             <span className="text-5xl md:text-[95px] font-[1000] italic tracking-tighter text-[#1A2B3C] leading-none">
               URI
             </span>
-
-            {/* i o'rnidagi Mars (♂) belgisi */}
-            <div className="flex items-center justify-center mx-[-2px] md:mx-[4px]">
+            <div className="flex items-center justify-center mx-1 md:mx-2">
               <Mars
-                strokeWidth={4} // Kattaroq o'lchamda strokeWidth ham ko'paytirildi
-                className="w-12 h-12 md:w-[105px] md:h-[105px] text-[#4FC3F7] transform rotate-[10deg] translate-y-[-2px] md:translate-y-[-4px]"
+                strokeWidth={4}
+                className="w-12 h-12 md:w-[100px] md:h-[100px] text-[#4FC3F7] rotate-[10deg] -translate-y-1 md:-translate-y-2"
               />
             </div>
-
-            {/* N harfi */}
             <span className="text-5xl md:text-[95px] font-[1000] italic tracking-tighter text-[#1A2B3C] leading-none">
               N
             </span>
@@ -126,50 +113,17 @@ export default function Purchase() {
           <p className="text-[#1A2B3C]/40 font-black tracking-[8px] uppercase text-[10px] md:text-[14px] mt-4">
             ERKAKLAR SALOMATLIGI KOMPLEKSI
           </p>
-        </motion.div>
+        </div>
 
-        {/* O'YNAB TURUVCHI KAPSULALAR */}
-        <div className="relative h-32 flex justify-center items-center gap-16">
-          {[
-            {
-              color: "bg-[#1A2B3C]",
-              size: "w-12 h-6",
-              delay: 0,
-              rotate: "rotate-45",
-            },
-            {
-              color: "bg-[#4FC3F7]",
-              size: "w-14 h-7",
-              delay: 0.5,
-              rotate: "-rotate-12",
-            },
-            {
-              color: "bg-slate-200",
-              size: "w-12 h-6",
-              delay: 1,
-              rotate: "rotate-[60deg]",
-            },
-          ].map((pill, i) => (
-            <motion.div
-              key={i}
-              animate={{
-                y: [0, -35, 0],
-                rotate: [0, 20, -20, 0],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                delay: pill.delay,
-                ease: "easeInOut",
-              }}
-              className={`${pill.size} ${pill.color} rounded-full shadow-2xl border border-white/40 ${pill.rotate} opacity-90`}
-            />
-          ))}
+        {/* STATIK KAPSULALAR (ANIMATSIYASIZ) */}
+        <div className="relative h-20 flex justify-center items-center gap-12 opacity-60">
+          <div className="w-12 h-6 bg-[#1A2B3C] rounded-full rotate-45 shadow-sm" />
+          <div className="w-14 h-7 bg-[#4FC3F7] rounded-full -rotate-12 shadow-sm" />
+          <div className="w-12 h-6 bg-slate-200 rounded-full rotate-[60deg] shadow-sm" />
         </div>
       </div>
 
-      {/* Orqa fondagi dekorativ elementlar */}
+      {/* FON ELEMENTLARI */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden opacity-40">
         <div className="absolute -top-[15%] -left-[10%] w-[50%] h-[50%] bg-[#4FC3F7]/5 rounded-full blur-[150px]" />
         <div className="absolute -bottom-[15%] -right-[10%] w-[50%] h-[50%] bg-[#1A2B3C]/5 rounded-full blur-[150px]" />
