@@ -7,19 +7,19 @@ export default function Gymnastics() {
     {
       title: "QUVVAT",
       subtitle: "ENERGIYA ZAPASI",
-      imgSrc: "/energy-card.png",
+      imgSrc: "/quvvat.png",
       color: "from-blue-50 to-blue-100",
     },
     {
       title: "CHIDAMLILIK",
       subtitle: "TESTOSTERON BALANSI",
-      imgSrc: "/power-card.png",
+      imgSrc: "/chidamlik.png",
       color: "from-slate-50 to-slate-100",
     },
     {
       title: "HIMOYA",
       subtitle: "11 FAOL KOMPONENT",
-      imgSrc: "/shield-card.png",
+      imgSrc: "/ximoya.png",
       color: "from-blue-100 to-blue-200",
     },
   ];

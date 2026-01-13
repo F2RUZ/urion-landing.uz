@@ -20,7 +20,7 @@ export default function Usage() {
           <circle cx="12" cy="12" r="1" fill="currentColor" />
         </svg>
       ),
-      title: "KUNIGA 1 TA KAPSULA",
+      title: "KUNIGA 2 TA KAPSULA",
       desc: "Ovqat paytida yoki undan keyin yetarli miqdordagi suv bilan qabul qiling.",
     },
     {
@@ -111,7 +111,7 @@ export default function Usage() {
         <div className="w-full md:w-1/2 relative">
           <div className="relative h-[450px] md:h-[650px] w-full rounded-[50px] overflow-hidden shadow-2xl border-[8px] border-slate-50">
             <Image
-              src="/usage-man.png"
+              src="/ritm.png"
               alt="Urion Lifestyle"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

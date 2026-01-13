@@ -4,22 +4,19 @@ import Image from "next/image";
 export default function Composition() {
   const mainFeatures = {
     benefits: [
-      "ERKAKLIK QUVVATINI TABIIY TIKLASHGA YORDAM BERADI",
-      "ORGANIZMNING UMUMIY CHIDAMLILIGINI OSHIRADI",
-      "GORMORAL BALANSNI ME'YORDA SAQLAYDI",
+      "jinsiy a’zolar holati haqida qayg‘uruvchi.",
+      "erkaklar faolligi va tonusini saqlab qolishni xohlovchi",
+      "jismoniy yoki hissiy zo‘riqishni boshdan kechiruvchi",
+      "ratsionni foydali ozuqa moddalari bilan to‘ldirishni xohlovchi insonlar",
     ],
-    components: [
-      "11 XIL FAOL VITAMINLAR KOMPLEKSI",
-      "NODIR O'SIMLIK EKSTRAKTLARI",
-      "MUHIM MIKRO VA MAKROELEMENTLAR",
-    ],
+    components: ["vitaminlar", "mikroelementlar", "o‘simlik komponentlari"],
   };
 
   const formulaData = [
     { name: "VITAMINLAR", desc: "A, B, C, E, D3" },
-    { name: "MINERALLAR", desc: "SINK, SELEN, MAGNIY" },
+    { name: "mikroelementlar", desc: "jumladan, rux va selen" },
     { name: "EKSTRAKTLAR", desc: "100% TABIIY" },
-    { name: "AMINOCHISLOTALAR", desc: "QUVVAT MANBAI" },
+    { name: "antioksidant", desc: "Moddalar" },
   ];
 
   return (
@@ -35,8 +32,11 @@ export default function Composition() {
             <span className="text-[#4FC3F7]"> FORMULA</span>
           </h2>
           <p className="text-slate-500 font-bold mt-4 uppercase text-[10px] md:text-xs tracking-[3px] max-w-2xl mx-auto leading-relaxed">
-            URION — Erkaklar salomatligini har tomonlama qo'llab-quvvatlash
-            uchun 11 xil biologik faol komponentdan tashkil topgan noyob majmua.
+            Urion - bu erkaklar jinsiy tizimini qo‘llab-quvvatlash uchun maxsus
+            ishlab chiqilgan biologik faol oziq-ovqat qo‘shimchasi. Vitaminlar,
+            mikroelementlar va o‘simlik tarkibiy qismlari majmuasi erkaklar
+            organizmining normal funksional holatini, energiya darajasini va
+            umumiy holatni saqlashga yordam beradi.
           </p>
         </div>
 
@@ -45,10 +45,10 @@ export default function Composition() {
           <div className="w-full lg:w-[380px] bg-white rounded-[40px] p-8 md:p-10 shadow-2xl shadow-blue-900/5 border border-slate-100 relative z-10 transition-all duration-500 hover:-translate-y-2 group">
             <div className="mb-8">
               <h3 className="text-[#4FC3F7] text-2xl font-black uppercase italic group-hover:tracking-widest transition-all">
-                ASOSIY
+                kimlar uchun
               </h3>
               <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-1">
-                TA'SIR DOIRASI
+                mo‘ljallangan?
               </p>
               <div className="h-1 w-12 bg-[#1A2B3C] mt-2 rounded-full" />
             </div>
@@ -74,7 +74,7 @@ export default function Composition() {
 
               <div className="absolute inset-4 bg-white rounded-full shadow-2xl flex items-center justify-center p-4 border-[10px] border-slate-50 relative overflow-hidden">
                 <Image
-                  src="/energy-core.png" // Bu yerda quvvatni ifodalovchi rasm yoki mahsulot bo'lishi kerak
+                  src="/center.png" // Bu yerda quvvatni ifodalovchi rasm yoki mahsulot bo'lishi kerak
                   alt="Urion Formula"
                   fill
                   className="object-contain p-6 group-hover:scale-110 transition-transform duration-700"
@@ -107,7 +107,7 @@ export default function Composition() {
                 TARKIBI
               </h3>
               <p className="text-[10px] text-white/40 font-bold uppercase tracking-widest mt-1">
-                VITAKOMPLEKS-11 TARKIBI 100% XAVFSIZ KOMPONENTLARDAN IBORAT
+                Urion tarkibiga biologik faol komponentlar kiradi:
               </p>
               <div className="h-1 w-12 bg-[#4FC3F7] mt-2 rounded-full" />
             </div>

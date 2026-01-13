@@ -59,19 +59,6 @@ export default function SourceInfo() {
           </div>
         </div>
 
-        {/* 3. COPYRIGHT VA MAHSULOT STATUSI */}
-        <div className="mt-20 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6 text-[#1A2B3C]/40 text-[10px] font-bold uppercase tracking-widest">
-          <p>© 2026 URION VITAKOMPLEKS. BARCHA HUQUQLAR HIMOYALANGAN.</p>
-          <div className="flex items-center gap-8 italic">
-            <span className="flex items-center gap-2">
-              <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              O'ZBEKISTONDA SERTIFIKATLANGAN
-            </span>
-            <span className="text-[#1A2B3C] bg-slate-100 px-3 py-1 rounded-md font-black">
-              18+
-            </span>
-          </div>
-        </div>
       </div>
 
       {/* MODAL */}

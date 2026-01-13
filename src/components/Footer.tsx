@@ -41,9 +41,6 @@ export default function MainFooter() {
                   </a>
                 </p>
               </div>
-              <p className="text-white/30 text-[10px] uppercase tracking-[3px] font-black">
-                Dushanba - Yakshanba: 09:00 - 21:00
-              </p>
             </div>
           </div>
 

@@ -80,7 +80,7 @@ export default function Intro() {
               {/* Orqa fon rasmi (Erkak kishi yoki mahsulot foni) */}
               <div className="w-full h-full bg-slate-50 rounded-[40px] overflow-hidden relative border border-slate-100 shadow-inner">
                 <Image
-                  src="/man-health.png"
+                  src="/intro.png"
                   alt="Urion Men Health"
                   fill
                   className="object-cover"
@@ -92,7 +92,7 @@ export default function Intro() {
               <div className="absolute -bottom-6 -left-2 md:-left-12 z-20 w-[200px] md:w-[320px] drop-shadow-[0_20px_40px_rgba(26,43,60,0.3)] transition-transform hover:scale-105 duration-500">
                 <div className="relative aspect-[1.1/1] rounded-[20px] border-[5px] border-white overflow-hidden shadow-2xl bg-white">
                   <Image
-                    src="/urion-box.png"
+                    src="/intro2.png"
                     alt="Urion Vitakompleks Box"
                     fill
                     className="object-cover rounded-[20px]"

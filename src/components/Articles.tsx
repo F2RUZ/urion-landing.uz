@@ -12,21 +12,21 @@ export default function Articles() {
       title: "Testosteronni tabiiy oshirish",
       description:
         "Erkaklik gormonini me'yorda saqlash uchun to'g'ri oziqlanish va kerakli minerallar (sink, selen) majmuasining ahamiyati.",
-      imgSrc: "/health-1.png",
+      imgSrc: "/testes.png",
       category: "Gormonlar",
     },
     {
       title: "Quvvatni qanday tiklash mumkin?",
       description:
         "Surunkali charchoq va ish qobiliyatining pasayishi — organizmdagi muhim vitaminlar yetishmasligining birinchi belgisi.",
-      imgSrc: "/energy-2.png",
+      imgSrc: "/qanday.png",
       category: "Turmush tarzi",
     },
     {
       title: "Vitakompleks-11 siri",
       description:
         "Nega aynan 11 xil komponent? Urion formulasining boshqa oddiy BFQ (biologik faol qo'shimchalardan) asosiy farqlari haqida.",
-      imgSrc: "/urion-box.png",
+      imgSrc: "/vitamin.png",
       category: "Ilmiy asos",
     },
   ];
@@ -69,10 +69,10 @@ export default function Articles() {
           {articles.map((article, idx) => (
             <div
               key={idx}
-              className="group relative flex flex-col h-[550px] bg-white rounded-[50px] overflow-hidden shadow-[0_15px_45px_rgba(26,43,60,0.05)] hover:shadow-[0_40px_80px_rgba(79,195,247,0.15)] transition-all duration-700 border border-slate-50"
+              className="group relative flex flex-col h-[400px] bg-white rounded-[50px] overflow-hidden shadow-[0_15px_45px_rgba(26,43,60,0.05)] hover:shadow-[0_40px_80px_rgba(79,195,247,0.15)] transition-all duration-700 border border-slate-50"
             >
               {/* Rasm qismi (45%) */}
-              <div className="relative h-[45%] w-full overflow-hidden">
+              <div className="relative h-[100%] w-full overflow-hidden">
                 <Image
                   src={article.imgSrc}
                   alt={article.title}
@@ -94,7 +94,7 @@ export default function Articles() {
               {/* Matn qismi (55%) */}
               <div className="flex-1 p-10 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-[#1A2B3C] font-[1000] text-[24px] leading-[1.1] uppercase tracking-tighter mb-6 group-hover:text-[#4FC3F7] transition-colors duration-500">
+                  <h3 className="text-[#1A2B3C] font-[1000] text-[18px] leading-[1.1] uppercase tracking-tighter mb-6 group-hover:text-[#4FC3F7] transition-colors duration-500">
                     {article.title}
                   </h3>
 
@@ -103,11 +103,6 @@ export default function Articles() {
                   </p>
                 </div>
 
-                {/* Batafsil tugmasi (Vizual) */}
-                <div className="mt-6 flex items-center gap-3 text-[#4FC3F7] font-black text-[11px] uppercase tracking-widest group-hover:gap-5 transition-all">
-                  <span className="h-[2px] w-8 bg-[#4FC3F7] rounded-full" />
-                  Batafsil o'qish
-                </div>
               </div>
             </div>
           ))}
