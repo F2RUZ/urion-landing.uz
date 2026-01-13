@@ -21,7 +21,7 @@ export default function Composition() {
 
   return (
     <section
-      className="w-full py-5 bg-slate-50/30 overflow-hidden"
+      className="w-full py-10 bg-slate-50/30 overflow-hidden"
       id="composition"
     >
       <div className="max-w-[1100px] mx-auto px-4">
@@ -66,19 +66,23 @@ export default function Composition() {
             </ul>
           </div>
 
-          {/* MARKAZIY QISM: Vizual element (Quvvat belgisi yoki Mahsulot) */}
+          {/* MARKAZIY QISM: Vizual element */}
           <div className="flex flex-col items-center gap-10 z-20">
             <div className="w-56 h-56 md:w-72 md:h-72 relative group">
               {/* Orqa fondagi aylanuvchi nur */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[#4FC3F7]/20 to-transparent rounded-full animate-spin-slow" />
 
-              <div className="absolute inset-4 bg-white rounded-full shadow-2xl flex items-center justify-center p-4 border-[10px] border-slate-50 relative overflow-hidden">
-                <Image
-                  src="/center.png" // Bu yerda quvvatni ifodalovchi rasm yoki mahsulot bo'lishi kerak
-                  alt="Urion Formula"
-                  fill
-                  className="object-contain p-6 group-hover:scale-110 transition-transform duration-700"
-                />
+              {/* Rasm konteyneri to'g'irlandi */}
+              <div className="absolute inset-4 bg-white rounded-full shadow-2xl flex items-center justify-center border-[10px] border-slate-50 overflow-hidden">
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/center.png"
+                    alt="Urion Formula"
+                    fill
+                    className="object-contain p-6 group-hover:scale-110 transition-transform duration-700"
+                    priority
+                  />
+                </div>
               </div>
             </div>
 
