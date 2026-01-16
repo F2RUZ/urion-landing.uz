@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Mars, User, Phone, X, Check } from "lucide-react";
+import { Snackbar } from "./ui/Snackbar";
 
 interface OrderModalProps {
   isOpen: boolean;
@@ -13,8 +14,9 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [activeField, setActiveField] = useState<"name" | "phone" | null>(null);
+  const [snackbar, setSnackbar] = useState({ isVisible: false, message: "" });
 
-  const API_URL = `${process.env.NEXT_PUBLIC_API_SUSTAFLEX}/leads/`;
+  const API_URL = `${process.env.NEXT_PUBLIC_API_URL}/leads/`;
 
   const progress =
     (formData.name.length > 2 ? 50 : 0) +
@@ -25,14 +27,22 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
       document.body.style.overflow = "hidden";
       setStatus("idle");
       setFormData({ name: "", phone: "" });
+      setSnackbar({ isVisible: false, message: "" });
     } else {
       document.body.style.overflow = "auto";
     }
   }, [isOpen]);
 
+  // Ism kiritish: Faqat harflar
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/[^a-zA-Zа-яА-ЯёЁ\s]/g, "");
+    setFormData({ ...formData, name: value });
+  };
+
+  // Telefon formatlash
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let value = e.target.value.replace(/\D/g, "");
-    if (!value.startsWith("998")) value = "998" + value;
+    if (!value.startsWith("998")) value = "998" + value.slice(0, 9);
     value = value.slice(0, 12);
 
     let formatted = "+";
@@ -47,28 +57,46 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
     const cleanPhone = formData.phone.replace(/\D/g, "");
+
+    if (cleanPhone.length !== 12) {
+      setSnackbar({ isVisible: true, message: "Raqamni to'liq kiriting!" });
+      return;
+    }
+
+    setStatus("loading");
 
     try {
       const response = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: formData.name,
-          phone: cleanPhone,
-          source: "urion_web_site",
+          full_name: formData.name,
+          phone_number: `+${cleanPhone}`,
+          product_name: "Urion",
         }),
       });
 
       if (response.ok) {
         setStatus("success");
         setTimeout(() => onClose(), 4000);
+      } else if (response.status === 429) {
+        setStatus("error");
+        setSnackbar({
+          isVisible: true,
+          message:
+            "Siz allaqachon ariza qoldirgansiz. Iltimos, 1 soatdan keyin qayta urinib ko'ring.",
+        });
+        setTimeout(() => setStatus("idle"), 5000);
       } else {
         throw new Error();
       }
     } catch (error) {
       setStatus("error");
+      setSnackbar({
+        isVisible: true,
+        message: "Xatolik! Server bilan bog'lanib bo'lmadi.",
+      });
       setTimeout(() => setStatus("idle"), 3000);
     }
   };
@@ -77,11 +105,16 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
 
   return (
     <div className="fixed inset-0 z-[150] flex items-center justify-center p-4 bg-[#0F172A]/90 backdrop-blur-md">
-      {/* Click outside to close */}
+      <Snackbar
+        isVisible={snackbar.isVisible}
+        message={snackbar.message}
+        onClose={() => setSnackbar({ ...snackbar, isVisible: false })}
+      />
+
       <div className="absolute inset-0" onClick={onClose} />
 
       <div className="relative w-full max-w-[480px] bg-white rounded-[45px] shadow-[0_30px_100px_rgba(0,0,0,0.5)] overflow-hidden">
-        {/* Static Progress Bar */}
+        {/* Progress Bar */}
         <div className="absolute top-0 left-0 w-full h-1.5 bg-slate-100">
           <div
             className={`h-full transition-all duration-300 ${
@@ -93,7 +126,7 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
 
         <div className="p-8 md:p-12">
           {status === "success" ? (
-            <div className="py-12 text-center">
+            <div className="py-12 text-center animate-in fade-in zoom-in duration-500">
               <div className="w-24 h-24 bg-green-500 rounded-[30px] flex items-center justify-center text-white shadow-2xl mx-auto mb-8 rotate-[10deg]">
                 <Check size={48} strokeWidth={4} />
               </div>
@@ -140,9 +173,7 @@ export default function OrderModal({ isOpen, onClose }: OrderModalProps) {
                       onBlur={() => setActiveField(null)}
                       className="w-full px-4 py-5 bg-transparent outline-none font-bold text-[#1A2B3C] text-sm"
                       value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
+                      onChange={handleNameChange}
                     />
                   </div>
                 </div>
