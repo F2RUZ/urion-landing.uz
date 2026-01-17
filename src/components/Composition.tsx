@@ -14,7 +14,7 @@ export default function Composition() {
 
   const formulaData = [
     { name: "VITAMINLAR", desc: "A, B, C, E, D3" },
-    { name: "mikroelementlar", desc: "jumladan, rux va selen" },
+    { name: "Ivan choyi", desc: "prostatada profilaktika" },
     { name: "EKSTRAKTLAR", desc: "100% TABIIY" },
     { name: "antioksidant", desc: "Moddalar" },
   ];

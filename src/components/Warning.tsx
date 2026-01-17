@@ -10,7 +10,8 @@ const Warning = () => {
 
         <p className="text-[#1A2B3C] font-black text-[11px] md:text-[15px] lg:text-[18px] tracking-[1.5px] md:tracking-[3px] uppercase italic text-center leading-none">
           BFQ. DORI VOSITASI{" "}
-          <span className="text-[#4FC3F7]">HISOBLANMAYDI.</span>
+          <span className="text-[#4FC3F7]">HISOBLANMAYDI.</span><br />
+          <span className="text-[10px] md:text-[15px] ">Qabul qilishdan avval shifokor bilan maslahatlashing</span>
         </p>
 
         <div className="hidden sm:block h-[1px] w-8 md:w-16 bg-gradient-to-l from-transparent to-[#4FC3F7]/50" />

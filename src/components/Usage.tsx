@@ -21,7 +21,7 @@ export default function Usage() {
         </svg>
       ),
       title: "KUNIGA 2 TA KAPSULA",
-      desc: "Ovqat paytida yoki undan keyin yetarli miqdordagi suv bilan qabul qiling.",
+      desc: "kuniga 2 maxal",
     },
     {
       icon: (
@@ -133,7 +133,7 @@ export default function Usage() {
           {/* Floating Badge (Kapsula miqdori) */}
           <div className="absolute -bottom-6 -right-4 md:right-0 bg-white p-6 rounded-[30px] shadow-[0_20px_40px_rgba(0,0,0,0.15)] border border-slate-100 flex items-center gap-4 transition-transform hover:translate-y-[-5px]">
             <div className="w-14 h-14 rounded-2xl bg-[#1A2B3C] flex items-center justify-center text-[#4FC3F7] font-[1000] text-3xl italic shadow-inner">
-              1
+              4
             </div>
             <div>
               <p className="text-[#1A2B3C] font-[1000] uppercase text-xs tracking-[2px] leading-tight">

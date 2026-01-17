@@ -42,18 +42,17 @@ export default function Intro() {
 
               <div className="mt-3 md:mt-4 space-y-1">
                 <h2 className="text-[26px] md:text-[42px] font-extrabold leading-[1.1] text-[#1A2B3C] tracking-tight">
-                  Erkaklik quvvati va <br />
-                  salomatlik siri!
+                  Erkaklar reproduktiv tizimini qo'llab-quvvatlash va o'ziga
+                  ishonch
                 </h2>
               </div>
             </div>
 
             <div className="flex items-start gap-2 max-w-[420px] mb-8 border-l-2 border-[#4FC3F7] pl-4">
               <p className="text-[#1A2B3C] text-[13px] md:text-[15px] leading-relaxed font-medium">
-                11 xil faol komponentdan iborat
-                <span className="text-[#4FC3F7] font-bold"> Vitakompleks</span>:
-                quvvatni oshirish, chidamlilikni tiklash va umumiy salomatlikni
-                himoya qilish uchun maxsus yaratilgan.
+                Erkaklar reproduktiv va genitouriya tizimlarining normal
+                ishlashini qo'llab-quvvatlash uchun vitamin va mineral
+                kompleksga ega parhez qo'shimchasi
               </p>
             </div>
 
@@ -106,7 +105,7 @@ export default function Intro() {
                   Kuniga
                 </span>
                 <span className="text-3xl md:text-5xl font-black italic leading-none my-0.5 md:my-1">
-                  1
+                  4
                 </span>
                 <span className="text-[10px] md:text-[12px] font-black uppercase tracking-tighter text-[#4FC3F7]">
                   Kapsula

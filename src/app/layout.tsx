@@ -97,13 +97,13 @@ export default function RootLayout({
         <main>{children}</main>
 
         {/* 3. GLOBAL DISCLAIMER (Urion ranglarida) */}
-        <div className="fixed bottom-0 left-0 w-full border-t border-slate-200 py-3 bg-white/80 backdrop-blur-md z-[9999]">
+        {/* <div className="fixed bottom-0 left-0 w-full border-t border-slate-200 py-3 bg-white/80 backdrop-blur-md z-[9999]">
           <div className="container mx-auto px-4 text-center">
             <p className="text-slate-500 font-bold text-[10px] md:text-xs tracking-[2px] uppercase">
               BIOLOGIK FAOL QO'SHIMCHA. DORI VOSITASI HISOBLANMAYDI.
             </p>
           </div>
-        </div>
+        </div> */}
       </body>
     </html>
   );

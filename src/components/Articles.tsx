@@ -12,7 +12,7 @@ export default function Articles() {
       title: "Testosteronni tabiiy oshirish",
       description:
         "Erkaklik gormonini me'yorda saqlash uchun to'g'ri oziqlanish va kerakli minerallar (sink, selen) majmuasining ahamiyati.",
-      imgSrc: "/testes.png",
+      imgSrc: "/test.png",
       category: "Gormonlar",
     },
     {
